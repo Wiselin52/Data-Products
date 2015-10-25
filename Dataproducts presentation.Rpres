@@ -1,0 +1,48 @@
+Dataproducts presentation
+========================================================
+author: Wiselin Dhas Mathuram
+date: 10/25/2015
+
+Regression Analysis
+========================================================
+
+What is Regrssion Analysis
+
+- Statistical process for estimating the relationships among variables.
+
+- Its focus is on the relationship between a dependent variable and one or more independent variables
+
+- It is used for Predictive Analysis
+
+Fittng a regressin Model Using R
+========================================================
+
+```{r}
+# sets the working directory and Read data into R
+setwd("C:/Users/wmathura/Documents")
+mydata<-read.csv("Ozone_data.csv")
+# Runs a Regression model and gives the summary output
+summary(lm(Ozone ~ Temp+Wind, data = mydata))
+```
+
+How to calculate Correlation in R
+========================================================
+
+```{r}
+# draws a correlation plot
+pairs(mydata)
+```
+Hypothesis Testing
+========================================================
+- Hypothesis testing is an essential procedure in statistics.
+- A hypothesis test evaluates two mutually exclusive statements about a population to determine which statement is best supported by the sample data.
+
+Hypothesis Testing in R
+========================================================
+
+Separating Ozone data from the data sheet and then applyting T Test
+```{r}
+newdata <- mydata[c(1)]
+t.test(newdata,alternative = "less", mu= 50)
+```
+
